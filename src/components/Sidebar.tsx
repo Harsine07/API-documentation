@@ -14,37 +14,26 @@ interface SidebarProps {
 }
 
 const navigationItems: NavItem[] = [
-  { id: 'introduction', title: 'Introduction' },
-  { id: 'bank-verification', title: 'Bank Verification' },
+  { id: 'introduction', title: 'Introduction'},
+  { id: 'bank-verification', title: 'Bank Verification',"badge":"Post" },
   {
     id: 'pan-verification',
     title: 'PAN Verification',
-    children: [
-      { id: 'pan-lite', title: 'PAN Lite', badge: 'POST' },
-      { id: 'pan-comprehensive', title: 'PAN Comprehensive', badge: 'POST' },
-      { id: 'pan-comprehensive-plus', title: 'PAN Comprehensive Plus', badge: 'POST' },
-      { id: 'pan-advanced', title: 'PAN Advanced', badge: 'POST' },
-      { id: 'pan-advanced-v2', title: 'PAN Advanced V2', badge: 'POST' },
-      { id: 'pan-advanced-v3', title: 'PAN Advanced V3', badge: 'POST' },
-      { id: 'pan-with-details-v2', title: 'PAN With Details V2', badge: 'POST' },
-      { id: 'pan-with-details-v3', title: 'PAN With Details V3', badge: 'POST' },
-      { id: 'pan-to-aadhaar', title: 'PAN To Aadhaar', badge: 'POST' },
-      { id: 'pan-to-father-name', title: 'PAN To Father Name', badge: 'POST' },
-    ]
+    badge: 'Post',
   },
-  { id: 'passport-verification', title: 'Passport Verification' },
-  { id: 'aadhaar-verification', title: 'Aadhaar Verification' },
-  { id: 'dl-verification', title: 'DL Verification' },
-  { id: 'face-match', title: 'Face Match' },
-  { id: 'face-liveness', title: 'Face Liveness' },
-  { id: 'pan-ocr', title: 'PAN OCR' },
-  { id: 'aadhaar-ocr', title: 'Aadhaar OCR' },
-  { id: 'dl-ocr', title: 'DL OCR' },
-  { id: 'aadhaar-masking', title: 'Aadhaar Masking' },
-  { id: 'vehicle-rc', title: 'Vehicle RC' },
-  { id: 'e-aadhaar', title: 'E-Aadhaar' },
-  { id: 'e-aadhaar-download', title: 'E-Aadhaar Download' },
-  { id: 'employment-verification', title: 'Employment Verification' },
+  { id: 'passport-verification', title: 'Passport Verification',"badge":"Post" },
+  { id: 'aadhaar-verification', title: 'Aadhaar Verification',"badge":"Post" },
+  { id: 'dl-verification', title: 'DL Verification',"badge":"Post" },
+  { id: 'face-match', title: 'Face Match',"badge":"Post" },
+  { id: 'face-liveness', title: 'Face Liveness',"badge":"Post" },
+  { id: 'pan-ocr', title: 'PAN OCR',"badge":"Post" },
+  { id: 'aadhaar-ocr', title: 'Aadhaar OCR',"badge":"Post" },
+  { id: 'dl-ocr', title: 'DL OCR',"badge":"Post" },
+  { id: 'aadhaar-masking', title: 'Aadhaar Masking',"badge":"Post" },
+  { id: 'vehicle-rc', title: 'Vehicle RC',"badge":"Post" },
+  { id: 'e-aadhaar', title: 'E-Aadhaar',"badge":"Post" },
+  { id: 'e-aadhaar-download', title: 'E-Aadhaar Download',"badge":"Post" },
+  { id: 'employment-verification', title: 'Employment Verification',"badge":"Post" },
 ];
 
 export function Sidebar({ activeSection, onSectionChange }: SidebarProps) {
@@ -114,7 +103,7 @@ export function Sidebar({ activeSection, onSectionChange }: SidebarProps) {
     <div className="w-80 bg-white border-r border-gray-200 flex flex-col h-screen">
       {/* Header */}
       <div className="p-6 border-b border-gray-200 flex-shrink-0">
-        <h1 className="text-xl font-bold text-gray-800">API Documentations</h1>
+        <h1 className="text-4xl font-bold text-gray-800">API Documentations</h1>
         <p className="text-sm text-gray-600 mt-1">Manage your API keys and encryption settings</p>
       </div>
 

@@ -7,7 +7,7 @@ export function Header() {
       {/* FastKYC Logo in top right */}
       <div className="flex items-center">
         <img 
-          src="https://images.pexels.com/photos/5483077/pexels-photo-5483077.jpeg?auto=compress&cs=tinysrgb&w=200&h=60&fit=crop" 
+          src="public\logo.jpg" 
           alt="FastKYC Logo" 
           className="h-12 w-auto object-contain"
         />
