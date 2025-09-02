@@ -1,61 +1,150 @@
 import React from 'react';
-import { FileText, Shield, Zap } from 'lucide-react';
 
 export function PanVerificationContent() {
   return (
-    <div className="space-y-8">
-      <div>
-        <h1 className="text-3xl font-bold text-gray-800 mb-6">PAN Verification</h1>
-        <p className="text-gray-600 leading-relaxed text-lg">
-          Comprehensive PAN (Permanent Account Number) verification services with multiple verification levels to suit different business needs.
-        </p>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="bg-purple-50 border border-purple-200 rounded-lg p-6">
-          <Zap className="w-8 h-8 text-purple-600 mb-4" />
-          <h3 className="font-semibold text-purple-800 mb-2">PAN Lite</h3>
-          <p className="text-purple-700 text-sm">Quick PAN validation for basic verification needs</p>
-        </div>
-        <div className="bg-purple-50 border border-purple-200 rounded-lg p-6">
-          <FileText className="w-8 h-8 text-purple-600 mb-4" />
-          <h3 className="font-semibold text-purple-800 mb-2">Comprehensive</h3>
-          <p className="text-purple-700 text-sm">Detailed PAN information with additional data points</p>
-        </div>
-        <div className="bg-purple-50 border border-purple-200 rounded-lg p-6">
-          <Shield className="w-8 h-8 text-purple-600 mb-4" />
-          <h3 className="font-semibold text-purple-800 mb-2">Advanced</h3>
-          <p className="text-purple-700 text-sm">Complete verification with enhanced security checks</p>
-        </div>
-      </div>
-
-      <div className="bg-white border border-gray-200 rounded-lg p-6">
-        <h3 className="font-semibold text-gray-800 mb-4">Available Endpoints</h3>
-        <div className="space-y-3">
-          <div className="flex items-center gap-3">
-            <span className="px-2 py-1 bg-green-100 text-green-800 text-xs font-medium rounded">POST</span>
-            <span className="font-mono text-sm">/api/v1/pan-lite</span>
+    <div className="max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        {/* Left Side - Documentation */}
+        <div className="space-y-8">
+          {/* Title and Description */}
+          <div>
+            <h1 className="text-3xl font-bold text-gray-800 mb-4">
+              PAN Verification
+            </h1>
+            <p className="text-gray-600 leading-relaxed">
+              Comprehensive PAN (Permanent Account Number) verification services with multiple verification levels to suit different business needs.
+            </p>
           </div>
-          <div className="flex items-center gap-3">
-            <span className="px-2 py-1 bg-green-100 text-green-800 text-xs font-medium rounded">POST</span>
-            <span className="font-mono text-sm">/api/v1/pan-comprehensive</span>
+
+          {/* Request Table */}
+          <div className="bg-white border border-gray-200 rounded-lg overflow-hidden">
+            <div className="bg-gray-50 px-6 py-4 border-b border-gray-200">
+              <h3 className="font-semibold text-gray-800">Request</h3>
+            </div>
+            <div className="overflow-x-auto">
+              <table className="w-full">
+                <thead className="bg-gray-50">
+                  <tr>
+                    <th className="text-left p-4 font-medium text-gray-700 border-b">Field</th>
+                    <th className="text-left p-4 font-medium text-gray-700 border-b">Type</th>
+                    <th className="text-left p-4 font-medium text-gray-700 border-b">Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b border-gray-100">
+                    <td className="p-4 font-mono text-sm">panNumber</td>
+                    <td className="p-4 text-sm text-gray-600">string</td>
+                    <td className="p-4 text-sm text-gray-600">10-digit PAN number</td>
+                  </tr>
+                  <tr className="border-b border-gray-100">
+                    <td className="p-4 font-mono text-sm">name</td>
+                    <td className="p-4 text-sm text-gray-600">string</td>
+                    <td className="p-4 text-sm text-gray-600">Full name as per PAN card</td>
+                  </tr>
+                  <tr>
+                    <td className="p-4 font-mono text-sm">dateOfBirth</td>
+                    <td className="p-4 text-sm text-gray-600">string</td>
+                    <td className="p-4 text-sm text-gray-600">Date of birth (DD/MM/YYYY)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
-          <div className="flex items-center gap-3">
-            <span className="px-2 py-1 bg-green-100 text-green-800 text-xs font-medium rounded">POST</span>
-            <span className="font-mono text-sm">/api/v1/pan-advanced</span>
+
+          {/* Response Table */}
+          <div className="bg-white border border-gray-200 rounded-lg overflow-hidden">
+            <div className="bg-gray-50 px-6 py-4 border-b border-gray-200">
+              <h3 className="font-semibold text-gray-800">Response</h3>
+            </div>
+            <div className="overflow-x-auto">
+              <table className="w-full">
+                <thead className="bg-gray-50">
+                  <tr>
+                    <th className="text-left p-4 font-medium text-gray-700 border-b">Field</th>
+                    <th className="text-left p-4 font-medium text-gray-700 border-b">Type</th>
+                    <th className="text-left p-4 font-medium text-gray-700 border-b">Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b border-gray-100">
+                    <td className="p-4 font-mono text-sm">status</td>
+                    <td className="p-4 text-sm text-gray-600">string</td>
+                    <td className="p-4 text-sm text-gray-600">Verification status</td>
+                  </tr>
+                  <tr className="border-b border-gray-100">
+                    <td className="p-4 font-mono text-sm">panHolder</td>
+                    <td className="p-4 text-sm text-gray-600">string</td>
+                    <td className="p-4 text-sm text-gray-600">Name as per PAN records</td>
+                  </tr>
+                  <tr className="border-b border-gray-100">
+                    <td className="p-4 font-mono text-sm">isValid</td>
+                    <td className="p-4 text-sm text-gray-600">boolean</td>
+                    <td className="p-4 text-sm text-gray-600">PAN validity status</td>
+                  </tr>
+                  <tr>
+                    <td className="p-4 font-mono text-sm">category</td>
+                    <td className="p-4 text-sm text-gray-600">string</td>
+                    <td className="p-4 text-sm text-gray-600">PAN holder category</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
-        <h3 className="font-semibold text-blue-800 mb-4">Response Data</h3>
-        <ul className="text-blue-700 space-y-2 text-sm">
-          <li>• PAN holder name</li>
-          <li>• Date of birth</li>
-          <li>• Father's name</li>
-          <li>• PAN status (Active/Inactive)</li>
-          <li>• Aadhaar linking status</li>
-        </ul>
+        {/* Right Side - Code Examples */}
+        <div className="space-y-6">
+          {/* cURL Request */}
+          <div className="bg-gray-900 text-white rounded-lg overflow-hidden">
+            <div className="bg-gray-800 px-4 py-2 border-b border-gray-700">
+              <span className="text-green-400 font-medium text-sm">cURL Request</span>
+            </div>
+            <div className="p-4 overflow-x-auto">
+              <pre className="text-sm font-mono">
+{`curl --location --request POST 'https://api.example.com/v1/pan-verification' \\
+--header 'Content-Type: application/json' \\
+--data-raw '{
+  "panNumber": "ABCDE1234F",
+  "name": "John Doe",
+  "dateOfBirth": "15/08/1990"
+}'`}
+              </pre>
+            </div>
+          </div>
+
+          {/* Sample Request */}
+          <div className="bg-gray-900 text-white rounded-lg overflow-hidden">
+            <div className="bg-gray-800 px-4 py-2 border-b border-gray-700">
+              <span className="text-blue-400 font-medium text-sm">Sample Request</span>
+            </div>
+            <div className="p-4 overflow-x-auto">
+              <pre className="text-sm font-mono">
+{`{
+  "panNumber": "ABCDE1234F",
+  "name": "John Doe",
+  "dateOfBirth": "15/08/1990"
+}`}
+              </pre>
+            </div>
+          </div>
+
+          {/* Sample Response */}
+          <div className="bg-gray-900 text-white rounded-lg overflow-hidden">
+            <div className="bg-gray-800 px-4 py-2 border-b border-gray-700">
+              <span className="text-yellow-400 font-medium text-sm">Sample Response</span>
+            </div>
+            <div className="p-4 overflow-x-auto">
+              <pre className="text-sm font-mono">
+{`{
+  "status": "success",
+  "panHolder": "John Doe",
+  "isValid": true,
+  "category": "Individual"
+}`}
+              </pre>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
